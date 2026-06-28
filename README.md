@@ -78,7 +78,3 @@ http://127.0.0.1:5000
 - PDF and document uploads
 - Advanced content quality metrics
 
-
-Aakriti Chandan
-B.Tech CSE (AI & ML)
-Amity University
