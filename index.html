@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Slop Detector</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: 60px auto; padding: 0 20px; background: #0f0f0f; color: #eee; }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    p.sub { color: #888; margin-bottom: 32px; }
+    input[type="url"], textarea { width: 100%; padding: 10px; background: #1a1a1a; border: 1px solid #333; color: #eee; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+    textarea { height: 160px; resize: vertical; }
+    .divider { text-align: center; color: #555; margin: 16px 0; }
+    button { margin-top: 16px; padding: 12px 28px; background: #6c47ff; color: white; border: none; border-radius: 6px; font-size: 15px; cursor: pointer; }
+    button:hover { background: #5535dd; }
+    .error { color: #ff6b6b; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <h1>🧹 AI Slop Detector</h1>
+  <p class="sub">Paste a URL or text to get a slop score from 0–100.</p>
+
+  {% if error %}
+  <p class="error">⚠ {{ error }}</p>
+  {% endif %}
+
+  <form method="POST" action="/analyze">
+    <label>URL to analyze</label><br><br>
+    <input type="url" name="url" placeholder="https://some-blog-post.com/article"><br>
+    <div class="divider">— or —</div>
+    <label>Paste text directly</label><br><br>
+    <textarea name="text" placeholder="Paste content here..."></textarea><br>
+    <button type="submit">Detect Slop →</button>
+  </form>
+</body>
+</html>
